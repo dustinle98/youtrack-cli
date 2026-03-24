@@ -1,0 +1,21 @@
+# Binary
+ytc
+ytc.exe
+ytc-*
+
+# Go
+*.test
+*.out
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Config (don't commit tokens)
+config.yml
