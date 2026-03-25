@@ -2,10 +2,6 @@ version: 2
 
 project_name: ytc
 
-before:
-  hooks:
-    - go mod tidy
-
 builds:
   - main: .
     binary: ytc
@@ -22,11 +18,13 @@ builds:
       - -s -w -X github.com/dustinle98/youtrack-cli/cmd.Version={{.Version}}
 
 archives:
-  - format: tar.gz
+  - formats:
+      - tar.gz
     name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
     format_overrides:
       - goos: windows
-        format: zip
+        formats:
+          - zip
 
 checksum:
   name_template: "checksums.txt"
@@ -38,10 +36,3 @@ changelog:
       - "^docs:"
       - "^test:"
       - "^ci:"
-
-release:
-  github:
-    owner: dustinle98
-    name: youtrack-cli
-  draft: false
-  prerelease: auto
