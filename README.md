@@ -16,6 +16,33 @@ A fast, cross-platform command-line client for [JetBrains YouTrack](https://www.
 
 ## Installation
 
+### Download Pre-built Binary (Recommended)
+
+Download the latest release for your platform from [GitHub Releases](https://github.com/dustinle98/youtrack-cli/releases):
+
+| Platform | File |
+|---|---|
+| macOS (Apple Silicon) | `ytc_*_darwin_arm64.tar.gz` |
+| macOS (Intel) | `ytc_*_darwin_amd64.tar.gz` |
+| Linux (x86_64) | `ytc_*_linux_amd64.tar.gz` |
+| Linux (ARM64) | `ytc_*_linux_arm64.tar.gz` |
+| Windows (x86_64) | `ytc_*_windows_amd64.zip` |
+| Windows (ARM64) | `ytc_*_windows_arm64.zip` |
+
+**macOS / Linux:**
+```bash
+# Download and extract (example for macOS Apple Silicon)
+tar -xzf ytc_*_darwin_arm64.tar.gz
+sudo mv ytc /usr/local/bin/
+```
+
+**Windows (PowerShell):**
+```powershell
+# Extract the zip, then add to PATH or move to a directory in PATH
+Expand-Archive ytc_*_windows_amd64.zip -DestinationPath C:\Tools
+# Add C:\Tools to your system PATH
+```
+
 ### From Source (requires Go 1.22+)
 
 ```bash
@@ -24,7 +51,7 @@ cd youtrack-cli
 go build -o ytc .
 
 # Install to PATH
-cp ytc /usr/local/bin/         # macOS/Linux
+sudo cp ytc /usr/local/bin/    # macOS/Linux
 # or copy ytc.exe to PATH      # Windows
 ```
 
